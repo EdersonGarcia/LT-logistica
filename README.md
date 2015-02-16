@@ -30,4 +30,6 @@ Documentação API pradrão grails
   http://www.grails.org/doc/latest/guide/webServices.html 
 ----
 
+Documentação Instalação Grails
 
+https://grails.org/Installation+Portuguese
