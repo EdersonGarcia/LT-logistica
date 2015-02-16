@@ -2,6 +2,7 @@ package br.com.lt.logistica
 
 import grails.converters.JSON
 
+import java.beans.IntrospectionException
 import java.beans.Transient
 
 import static org.springframework.http.HttpStatus.*
@@ -17,7 +18,6 @@ class RotaController {
 
     @Transactional(readOnly = true)
        def melhorRota(String mapa,String origem , String destino, Integer autonomia , Double valorCombustivel){
-        println(mapa)
         if(!origem.isEmpty() && !destino.isEmpty() &&
                 autonomia>0  && valorCombustivel>0 && !mapa.isEmpty()) {
             Localizacao origemObj , destinoObj
@@ -40,13 +40,27 @@ class RotaController {
 
     def salvarRota(String mapa, String origem , String destino, int kilometragem ){
         if(mapa == null || origem == null|| destino == null || kilometragem <=0){
-            respond(info:'parametros invalidos')
-            println(params)
+            respond(info:'parametros invalidos') as JSON
             return
         }
         def rota = ltService.salvarRota(mapa,origem,destino,kilometragem)
         respond([id:rota.id,origem:rota.origem.nome,destino:rota.destino.nome,kilometragem:rota.kilometragem]) as JSON
     }
 
-}
+   def listarLocalizacoes(String mapa){
+        def mapaObj = Mapa.findByNome(mapa)
+       def localizacao = Localizacao.createCriteria().list {
+           eq('mapa',mapaObj)
+
+       }
+       if(localizacao == []){
+           respond(info:'Não foram encontrados localizacoes para o mapa ',mapa:mapa)
+           return
+       }
+       respond(localizacao)
+
+
+       }
+   }
+
 
