@@ -28,7 +28,7 @@ Alterar no Arquivo grails-app/conf/DataSource.groovy Usuario , senha e  url do B
 Documentação API pradrão grails 
 
   http://www.grails.org/doc/latest/guide/webServices.html 
-----
+
 
 Documentação Instalação Grails
 
