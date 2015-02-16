@@ -2,8 +2,6 @@ package br.com.lt.logistica
 
 import grails.converters.JSON
 
-import java.beans.IntrospectionException
-import java.beans.Transient
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
@@ -88,8 +86,14 @@ class RotaController {
      * @apiVersion 0.0.1
      * @apiName listarLocalizacoes
      * @apiGroup rota
-     *
-     * @apiDescription listar localicoes de um mapa
+     * @apiSuccessExample {json} Success-Response:
+     *     HTTP/1.1 200 OK{
+     * {"class":"br.com.lt.logistica.Localizacao","id":3,"mapa":{"class":"br.com.lt.logistica.Mapa","id":1},"nome":"B"},
+     * {"class":"br.com.lt.logistica.Localizacao","id":4,"mapa":{"class":"br.com.lt.logistica.Mapa","id":1},"nome":"C"},
+     * {"class":"br.com.lt.logistica.Localizacao","id":5,"mapa":{"class":"br.com.lt.logistica.Mapa","id":1},"nome":"D"},
+     * {"class":"br.com.lt.logistica.Localizacao","id":6,"mapa":{"class":"br.com.lt.logistica.Mapa","id":1},"nome":"E"
+     *}
+     *  @apiDescription listar localicoes de um mapa
       */
 
    def listarLocalizacoes(String mapa){
@@ -99,7 +103,7 @@ class RotaController {
 
        }
        if(localizacao == []){
-           respond(info:'Não foram encontrados localizacoes para o mapa ',mapa:mapa)
+           respond(info:'Não foram encontrados localizacoes para o mapa ')
            return
        }
        respond(localizacao)

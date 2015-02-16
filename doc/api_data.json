@@ -1,7 +1,7 @@
 [
   {
     "type": "post",
-    "url": "/LT-logistica/rota/[mapa]",
+    "url": "/rota/listarLocalizacoes?[mapa]",
     "title": "",
     "parameter": {
       "fields": {
@@ -19,13 +19,22 @@
     "version": "0.0.1",
     "name": "listarLocalizacoes",
     "group": "rota",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK{\n{\"class\":\"br.com.lt.logistica.Localizacao\",\"id\":3,\"mapa\":{\"class\":\"br.com.lt.logistica.Mapa\",\"id\":1},\"nome\":\"B\"},\n{\"class\":\"br.com.lt.logistica.Localizacao\",\"id\":4,\"mapa\":{\"class\":\"br.com.lt.logistica.Mapa\",\"id\":1},\"nome\":\"C\"},\n{\"class\":\"br.com.lt.logistica.Localizacao\",\"id\":5,\"mapa\":{\"class\":\"br.com.lt.logistica.Mapa\",\"id\":1},\"nome\":\"D\"},\n{\"class\":\"br.com.lt.logistica.Localizacao\",\"id\":6,\"mapa\":{\"class\":\"br.com.lt.logistica.Mapa\",\"id\":1},\"nome\":\"E\"\n}",
+          "type": "json"
+        }
+      ]
+    },
     "description": "<p>listar localicoes de um mapa</p> ",
     "filename": "./grails-app/controllers/br/com/lt/logistica/RotaController.groovy",
     "groupTitle": "rota"
   },
   {
     "type": "post",
-    "url": "/LT-logistica/rota/melhorRota?[mapa][origem][destino][autonomia][valor]",
+    "url": "/rota/melhorRota?[mapa][origem][destino][autonomia][valor]",
     "title": "",
     "parameter": {
       "fields": {
@@ -79,7 +88,7 @@
   },
   {
     "type": "post",
-    "url": "/LT-logistica/rota:[mapa][origem][destino][kilometragem]",
+    "url": "/rota?[mapa][origem][destino][kilometragem]",
     "title": "",
     "parameter": {
       "fields": {
