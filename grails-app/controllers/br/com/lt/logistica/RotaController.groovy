@@ -71,6 +71,7 @@ class RotaController {
  *   }
  * @apiDescription salva uma nova rota
  */
+    @Transactional
     def salvarRota(String mapa, String origem , String destino, int kilometragem ){
         if(mapa == null || origem == null|| destino == null || kilometragem <=0){
             respond(info:'parametros invalidos') as JSON
