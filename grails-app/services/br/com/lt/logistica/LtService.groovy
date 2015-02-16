@@ -22,7 +22,9 @@
             }
 
             def calculaCustoRota(Integer distancia = 0 , Integer autonomia,Double valorCombustivel){
-                return (distancia / autonomia * valorCombustivel)
+                def custo =  (distancia / autonomia * valorCombustivel)
+
+                return custo.toBigDecimal().setScale(2, BigDecimal.ROUND_HALF_UP)
             }
 
           private  def buscaRotasPorId(def listaIdRotas = []){
