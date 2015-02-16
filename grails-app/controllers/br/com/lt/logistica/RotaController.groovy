@@ -77,7 +77,6 @@ class RotaController {
             return
         }
         def rota = ltService.salvarRota(mapa,origem,destino,kilometragem)
-        println(rota)
         respond([id:rota.id,origem:rota.origem.nome,destino:rota.destino.nome,kilometragem:rota.kilometragem]) as JSON
     }
 

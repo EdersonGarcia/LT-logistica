@@ -55,7 +55,6 @@
          def salvarRota(String mapaNome, String origemNome , String destinoNome, int kilometragem = 0){
              def mapa = Mapa.findByNome(mapaNome)
              def origem , destino
-                println(mapa)
              def rota
              if(mapa==null){
                  mapa = new Mapa(nome: mapaNome).save(flush:true, failOnError: true)
