@@ -16,7 +16,7 @@ class RotaController {
     static responseFormats = ['json', 'xml']
 
 /**
- * @api {post} /LT-logistica/rota/melhorRota?[mapa][origem][destino][autonomia][valor]
+ * @api {post} /rota/melhorRota?[mapa][origem][destino][autonomia][valor]
  * @apiParam {String} mapa nome do mapa que deseja realizar a busca exemp: "SP"
  * @apiVersion 0.0.1
  * @apiName melhorRota
@@ -55,7 +55,7 @@ class RotaController {
         }
     }
 /**
- * @api {post} /LT-logistica/rota:[mapa][origem][destino][kilometragem]
+ * @api {post} /rota?[mapa][origem][destino][kilometragem]
  * @apiParam {String} mapa nome do mapa que deseja salvar exemp: "SP"
  * @apiVersion 0.0.1
  * @apiName salvarRota
@@ -82,7 +82,7 @@ class RotaController {
     }
 
     /**
-     * @api {post} /LT-logistica/rota/[mapa]
+     * @api {post} /rota/listarLocalizacoes?[mapa]
      * @apiParam {String} mapa  nome do mapa que deseja realizar a busca
 
      * @apiVersion 0.0.1
