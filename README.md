@@ -13,10 +13,10 @@ e para finalizar foi realizado a criação dos webService
 ----
 
 ### Execução do projeto
-Requisito do Sitemas
-  Java Jdk 7 ou Superior
-  Banco de dados Postgresql
-  Recomendado memoria Ram > 1Gb
+Requisito do Sistemas
+*  Java Jdk 7 ou Superior
+*  Banco de dados Postgresql
+*  Recomendado memoria Ram > 1Gb
 
  Configuração da base de dados 
 
