@@ -50,5 +50,32 @@
                 }
                 return grafo
             }
+         def salvarRota(String mapaNome, String origemNome , String destinoNome, int kilometragem = 0){
+             def mapa = Mapa.findByNome(mapaNome)
+             def origem , destino
+
+             def rota
+             if(mapa==null){
+                 mapa = new Mapa(nome: mapaNome).save(flush:true, failOnError: true)
+             }
+
+              origem = Rota.findByNomeAndMapa(origemNome,mapa)
+             if(origem==null){
+                 origem = new Rota(nome: origemNome,mapa:mapa).save(flush:true, failOnError: true)
+             }
+
+             destino = Rota.findByNomeAndMapa(destinoNome,mapa)
+             if(destino==null){
+                 destino = new Rota(nome: destinoNome,mapa:mapa).save(flush:true, failOnError: true)
+             }
+             rota = Rota.findByOrigemAndDestino(origem,destino)
+                if(rota== null) {
+                    return new Rota(origem: origem, destino: destino, kilometragem: kilometragem).save(flush: true, failOnError: true)
+                }else{
+                    rota.kilometragem = kilometragem
+                   return rota.save(flush: true, failOnError: true)
+                }
+
+         }
 
         }
