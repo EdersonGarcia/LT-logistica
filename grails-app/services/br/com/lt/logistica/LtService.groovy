@@ -55,20 +55,20 @@
          def salvarRota(String mapaNome, String origemNome , String destinoNome, int kilometragem = 0){
              def mapa = Mapa.findByNome(mapaNome)
              def origem , destino
-
+                println(mapa)
              def rota
              if(mapa==null){
                  mapa = new Mapa(nome: mapaNome).save(flush:true, failOnError: true)
              }
 
-              origem = Rota.findByNomeAndMapa(origemNome,mapa)
+              origem = Localizacao.findByNomeAndMapa(origemNome,mapa)
              if(origem==null){
-                 origem = new Rota(nome: origemNome,mapa:mapa).save(flush:true, failOnError: true)
+                 origem = new Localizacao(nome: origemNome,mapa:mapa).save(flush:true, failOnError: true)
              }
 
-             destino = Rota.findByNomeAndMapa(destinoNome,mapa)
+             destino = Localizacao.findByNomeAndMapa(destinoNome,mapa)
              if(destino==null){
-                 destino = new Rota(nome: destinoNome,mapa:mapa).save(flush:true, failOnError: true)
+                 destino = new Localizacao(nome: destinoNome,mapa:mapa).save(flush:true, failOnError: true)
              }
              rota = Rota.findByOrigemAndDestino(origem,destino)
                 if(rota== null) {
