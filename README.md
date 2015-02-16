@@ -13,13 +13,13 @@ e para finalizar foi realizado a criação dos webService
   Recomendado memoria Ram > 1Gb
 ##### Configuração da base dadados 
 Alterar no Arquivo 'grails-app/conf/DataSource.groovy' Usuario , senha e  url do Banco de dados
-
+---------------------------------------------------------------------------------------------------------------
 ##Documentação APIs Personalizadas 
  Documentacao está em /doc/index.html'
  
- Documentação API pradrão grails 
+##Documentação API pradrão grails 
  http://www.grails.org/doc/latest/guide/webServices.html
- 
+----------------------------------------------------------------------------------------------------------------- 
  #Sistema em "Produção"
  
  http://levaetraz.eproject.com.br/logistica/
