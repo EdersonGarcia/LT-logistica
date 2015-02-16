@@ -16,7 +16,6 @@
 
                 }
                 def distancia = dijkstra.calculateShortestPath()
-                println(distancia)
                 def rotaIdealId = dijkstra.shortestPath
                 def rotaIdeal = buscaRotasPorId(rotaIdealId)
                 return [rota: rotaIdeal,distancia: distancia]
