@@ -27,14 +27,17 @@ Alterar no Arquivo grails-app/conf/DataSource.groovy Usuario , senha e  url do B
 
  Exemplo de uso das APIS
  http://levaetraz.eproject.com.br/logistica/rota/listarLocalizacoes?mapa=SP
+
  Resposta:
  [{"class":"br.com.lt.logistica.Localizacao","id":2,"mapa":{"class":"br.com.lt.logistica.Mapa","id":1},"nome":"A"},{"class":"br.com.lt.logistica.Localizacao","id":3,"mapa":{"class":"br.com.lt.logistica.Mapa","id":1},"nome":"B"}]
 
 http://levaetraz.eproject.com.br/logistica/rota/melhorRota?mapa=SP&origem=A&destino=B&autonomia=8&valorCombustivel=2.5
+
 Resposta:
 ['rota':['A', 'B'], 'distancia':10, 'custo':3.13]
 
 http://levaetraz.eproject.com.br/logistica/rota/salvarRota?mapa=SP&origem=B&destino=C&kilometragem=15
+
 Resposta:
 {"id":6,"origem":"B","destino":"C","kilometragem":15}
 
