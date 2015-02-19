@@ -42,9 +42,7 @@ Resposta:
 {"id":6,"origem":"B","destino":"C","kilometragem":15}
 
  
-Documentação API pradrão grails 
 
-  http://www.grails.org/doc/latest/guide/webServices.html 
 
 
 Documentação Instalação Grails
